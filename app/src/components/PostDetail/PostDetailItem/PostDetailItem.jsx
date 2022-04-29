@@ -98,6 +98,9 @@ export default function PostDetailItem({
           <Typography variant="body2" color="text.secondary">
             {text}
           </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {tags}
+          </Typography>
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorite" onClick={likePostHandler}>

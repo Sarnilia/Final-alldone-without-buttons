@@ -9,15 +9,17 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { Paper } from '@mui/material'
 import { useDispatch } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { signInQuery } from '../../../redux/actions/personAC'
 
 export default function SignIn() {
   const navigate = useNavigate()
-  const location = useLocation()
+  // const location = useLocation()
   const dispatch = useDispatch()
 
-  const from = location.state?.from?.pathname || '/'
+  // const from = location.state?.from?.pathname || '/'
+
+  const posts = '/posts'
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -27,7 +29,7 @@ export default function SignIn() {
         email: data.get('email'),
         password: data.get('password'),
         cb: () => {
-          navigate(from, { replace: true })
+          navigate(posts, { replace: true })
         },
       }),
     )
